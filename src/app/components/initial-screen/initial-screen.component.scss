@@ -1,0 +1,42 @@
+.initial-screen{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 10rem;
+}
+
+.botao{
+  height: 60px;
+  width: 260px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  button{
+    height: 50px;
+    width: 250px;
+    border-radius: 15px;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: var(--global-color);
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover{
+      background-color: white;
+      color: var(--global-color);
+      border: 3px solid var(--global-color);
+    }
+  }
+}
+
+.imagem-doacao{
+  img{
+    height: 500px;
+  }
+}
