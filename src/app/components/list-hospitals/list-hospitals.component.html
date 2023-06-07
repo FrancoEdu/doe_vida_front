@@ -1,1 +1,14 @@
-<p>list-hospitals works!</p>
+
+<section>
+  <div class="hospital-image">
+    <img src="../../../assets/Hospital building-amico.png" alt="Hospital">
+  </div>
+  <div class="hospitals" *ngIf="HospitalList.length > 0, else noneHospitals">
+
+  </div>
+  <ng-template #noneHospitals>
+    <div class="noneHospitals">
+      <p>Ainda não há pensamentos cadastrados !</p>
+    </div>
+  </ng-template>
+</section>

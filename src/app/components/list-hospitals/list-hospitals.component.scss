@@ -1,0 +1,13 @@
+section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem 0 5rem;
+}
+
+.hospital-image{
+  img{
+    height: 500px;
+  }
+}
