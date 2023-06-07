@@ -7,12 +7,14 @@ import { InitialScreenComponent } from './components/initial-screen/initial-scre
 import { ListHospitalsComponent } from './components/list-hospitals/list-hospitals.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HospitalComponent } from './components/hospital/hospital.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InitialScreenComponent,
-    ListHospitalsComponent
+    ListHospitalsComponent,
+    HospitalComponent
   ],
   imports: [
     BrowserModule,
