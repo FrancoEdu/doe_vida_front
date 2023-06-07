@@ -1,16 +1,18 @@
-
 <section>
   <div class="hospital-image">
     <img src="../../../assets/Hospital building-amico.png" alt="Hospital">
   </div>
-  <div class="hospitals" *ngIf="HospitalList.length > 0, else noneHospitals">
+  <div class="hospitals" *ngIf="HospitalList.length > 0; else noneHospitals">
     <div *ngFor="let i of HospitalList">
-      <app-hospital [hospital] = "i"></app-hospital>
+      <app-hospital [hospital]="i"></app-hospital>
     </div>
   </div>
-  <ng-template #noneHospitals>
-    <div class="noneHospitals">
-      <p>Ainda não há pensamentos cadastrados !</p>
+  <ng-template #noneHospitals >
+    <div class="grid-none-hospital">
+      <div class="noneHospitals">
+        <h1>Procurando por hospitais cadastrados ...</h1>
+      </div>
+      <div class="c-loader"></div>
     </div>
   </ng-template>
 </section>

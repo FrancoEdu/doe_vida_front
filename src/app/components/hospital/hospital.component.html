@@ -1,2 +1,14 @@
-<p>{{hospital.city_name}}</p>
-<p>{{hospital.hospital_name}}</p>
+<div class="hospital-grid">
+  <img src="../../../assets/Blood donation-rafiki.png" alt="Doador de sangue">
+  <div class="hospital-infos">
+    <h1>
+      {{hospital.hospital_name.toUpperCase()}}
+    </h1>
+    <h2>
+      {{hospital.city_name.toUpperCase()}} - {{verifyWhatIsTheState(hospital.state)}}
+    </h2>
+    <h3 *ngIf="hospital.donations_orders != null">
+      <span>Total de doações: </span>{{hospital.donations_orders}}
+    </h3>
+  </div>
+</div>
