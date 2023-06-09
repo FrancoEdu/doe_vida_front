@@ -10,4 +10,10 @@
     (click)="AuthenticationMethod()"
     >Sign In</button>
   </form>
+  <ng-container *ngIf="isLoading">
+    <div class="c-loader"></div>
+  </ng-container>
+  <ng-container *ngIf="errorMessage">
+    <div class="errorMessage">{{errorMessage}}</div>
+  </ng-container>
 </section>

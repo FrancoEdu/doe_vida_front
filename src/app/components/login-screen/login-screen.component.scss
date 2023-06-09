@@ -36,6 +36,7 @@ input{
   border-radius: 20px;
   border: 0;
   background-color: var(--global-color);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   color: white;
   font-family: var(--global-font);
   font-weight: 700;
@@ -43,6 +44,29 @@ input{
   transition: 0.5s;
 
   &:hover{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    opacity: 0.6;
+  }
+}
+
+.errorMessage{
+  font-family: var(--global-font);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--global-color);
+  margin-top: 1rem;
+}
+
+.c-loader{
+  margin-top: 1rem;
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: var(--global-color);
+  height: 50px;
+  width: 50px;
+}
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
   }
 }
