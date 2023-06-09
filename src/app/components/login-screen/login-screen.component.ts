@@ -31,6 +31,7 @@ export class LoginScreenComponent {
       try{
         const result = await this.service.login(this.username,this.password)
         this.router.navigate(['/listHospitals']);
+        // console.log(result);
       }catch(error){
         console.log(error)
       }
