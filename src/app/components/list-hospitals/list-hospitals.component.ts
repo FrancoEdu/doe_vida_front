@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Hospital } from '../../interface/Hospital';
+import { HospitalService } from 'src/app/services/hospital.service';
 
 @Component({
   selector: 'app-list-hospitals',
@@ -9,15 +10,17 @@ import { Hospital } from '../../interface/Hospital';
 export class ListHospitalsComponent {
   HospitalList: Hospital[] = [];
 
-  constructor(){}
+  constructor(private service: HospitalService){}
 
-  private url: string = "https://doevida.onrender.com/hospitals";
+  ngOnInit(){
+    this.getAllHospitals();
+  }
 
-  async ngOnInit(): Promise<Hospital[]> {
-    await fetch(this.url)
-      .then((response) => response.json())
-      .then((data) => this.HospitalList = data.hospitals)
-    console.log(this.HospitalList)
-    return this.HospitalList
+  async getAllHospitals(): Promise<void>{
+    try{
+      this.HospitalList = await this.service.getAllHospitals();
+    } catch (error){
+      console.log(error)
+    }
   }
 }

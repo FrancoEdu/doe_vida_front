@@ -1,0 +1,48 @@
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+
+  header{
+    img{
+      height: 350px;
+    }
+    height: 300px;
+  }
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+input{
+  height: 30px;
+  width: 250px;
+  padding: 15px;
+  border-radius: 20px;
+  border: 2px solid var(--global-color);
+  color: var(--global-color);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  outline: none;
+}
+
+.buttonSigIn{
+  height: 30px;
+  width: 150px;
+  border-radius: 20px;
+  border: 0;
+  background-color: var(--global-color);
+  color: white;
+  font-family: var(--global-font);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+}
