@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListHospitalsComponent } from './components/list-hospitals/list-hospitals.component';
 import { InitialScreenComponent } from './components/initial-screen/initial-screen.component';
 import { LoginScreenComponent } from './components/login-screen/login-screen.component';
+import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,10 @@ const routes: Routes = [
     component: InitialScreenComponent
   },{
     path: 'login',
-    component: LoginScreenComponent,
+    component: LoginScreenComponent
+  },{
+    path: 'board',
+    component: BoardAdminComponent
   }
 ];
 

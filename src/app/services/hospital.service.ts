@@ -24,7 +24,8 @@ export class HospitalService{
       body: JSON.stringify({ username, password })
     })
     if(response.ok){
-      return response.json();
+      const jsonResponse = response.json();
+      return jsonResponse;
     }else{
       if (response.status === 403) {
         throw new Error('Wrong password');
