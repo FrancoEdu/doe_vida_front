@@ -23,11 +23,16 @@ export class HospitalService{
       },
       body: JSON.stringify({ username, password })
     })
-
     if(response.ok){
       return response.json();
     }else{
-      throw new Error('Error during login')
+      if (response.status === 403) {
+        throw new Error('Wrong password');
+      } else if (response.status === 404) {
+        throw new Error('User not found');
+      } else {
+        throw new Error('Unexpected error occurred');
+      }
     }
   }
 }
