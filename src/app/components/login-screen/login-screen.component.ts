@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '@auth0/auth0-angular';
-import { HospitalService } from 'src/app/services/hospital.service';
+import { cookieService } from 'src/app/services/cookie.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login-screen',
@@ -17,7 +17,12 @@ export class LoginScreenComponent {
   errorMessage: string = '';
   isLoading: boolean = false;
 
-  constructor(public service: HospitalService, private formBuilder: FormBuilder, private router: Router){}
+  constructor(
+    public service: UserService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private cookie: cookieService
+  ){}
 
   ngOnInit(): void{
     this.Login = this.formBuilder.group({
@@ -36,6 +41,8 @@ export class LoginScreenComponent {
       try{
         this.isLoading=true;
         result = await this.service.login(this.username,this.password)
+        this.cookie.set('access_token', result.access_token);
+        console.log(this.cookie.get('access_token'));
         this.router.navigate(['/listHospitals'])
       }catch(error){
         if(error instanceof Error && error.message === 'User not found'){
