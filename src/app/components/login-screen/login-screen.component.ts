@@ -43,7 +43,7 @@ export class LoginScreenComponent {
         result = await this.service.login(this.username,this.password)
         this.cookie.set('access_token', result.access_token);
         console.log(this.cookie.get('access_token'));
-        this.router.navigate(['/listHospitals'])
+        this.router.navigate(['/board'])
       }catch(error){
         if(error instanceof Error && error.message === 'User not found'){
           this.errorMessage = "Usuário não encontrado na base de dados !"

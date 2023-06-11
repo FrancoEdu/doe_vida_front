@@ -1,7 +1,4 @@
 <section>
-  <div class="hospital-image">
-    <img src="../../../assets/Hospital building-amico.png" alt="Hospital">
-  </div>
   <div class="hospitals" *ngIf="HospitalList.length > 0; else noneHospitals">
     <div *ngFor="let i of HospitalList">
       <app-hospital [hospital]="i"></app-hospital>
