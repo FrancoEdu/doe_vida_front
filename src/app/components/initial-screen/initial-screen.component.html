@@ -1,11 +1,21 @@
 <section class="initial-screen">
-  <div class="botao">
-    <h1> Doe sangue <br> Doe vida <img src="../../../assets/gotadesangue.png" alt="Gota de sangue"></h1>
-    <button routerLink="/listHospitals">
-      Ver pontos de doação
-    </button>
-  </div>
-  <div class="imagem-doacao">
-    <img src="../../../assets/Blood donation-cuate.png" alt="Doação de sangue, doação de vida...">
-  </div>
+  <header class="header">
+    <h1>Bem-vindo ao painel de administração do <span>Doe vida !</span></h1>
+  </header>
+  <main class="main">
+    <div class="main-hospital">
+      <h2>Hospitais:</h2>
+      <h3>Número de Hospitais cadastrados: <span class="span">{{totalOfHospitals}}</span></h3>
+      <h3>Total de doações canceladas: <span class="span">{{cancelledDonations}}</span></h3>
+      <h3>Total de doações finalizadas: <span class="span">{{doneDonations}}</span></h3>
+      <h3>Total de tentativas de doações: <span class="span">{{totalOfDonations}}</span></h3>
+    </div>
+    <div class="main-users">
+      <h2>Usuários:</h2>
+      <h3> Total de usuários cadastrados: <span class="span">{{totalOfUsers}}</span></h3>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
 </section>

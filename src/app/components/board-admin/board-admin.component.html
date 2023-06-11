@@ -1,0 +1,20 @@
+<section class="board-section">
+  <div class="aside-menu">
+    <a class="link" (click)="navigateToRouter('board')">
+      <img src="../../../assets/icons8-board-24.png" alt="Board">
+      Board
+    </a>
+    <a class="link" (click)="navigateToRouter('users')">
+      <img src="../../../assets/icons8-convidado-masculino-24.png" alt="Accounts">
+      Users
+    </a>
+    <a class="link" (click)="navigateToRouter('hospital')">
+      <img src="../../../assets/icons8-hospital-24.png" alt="Hospitals">
+      Hospitals
+    </a>
+  </div>
+  <div class="view-setting">
+    <app-initial-screen *ngIf="currentComponent === 'initial-screen'"></app-initial-screen>
+    <app-list-hospitals *ngIf="currentComponent === 'list-hospitals'"></app-list-hospitals>
+  </div>
+</section>

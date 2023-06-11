@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HospitalComponent } from './components/hospital/hospital.component';
 import { LoginScreenComponent } from './components/login-screen/login-screen.component';
+import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginScreenComponent } from './components/login-screen/login-screen.com
     InitialScreenComponent,
     ListHospitalsComponent,
     HospitalComponent,
-    LoginScreenComponent
+    LoginScreenComponent,
+    BoardAdminComponent
   ],
   imports: [
     BrowserModule,
