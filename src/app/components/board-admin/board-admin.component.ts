@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { cookieService } from 'src/app/services/cookie.service';
 import { HospitalService } from 'src/app/services/hospital.service';
 
 @Component({
@@ -10,7 +12,7 @@ export class BoardAdminComponent {
 
   currentComponent: string = '';
 
-  constructor() {
+  constructor(private cookie: cookieService, private router: Router) {
     this.navigateToRouter('board'); // Carrega automaticamente 'board'
   }
 
@@ -25,6 +27,9 @@ export class BoardAdminComponent {
       this.currentComponent = 'users';
     } else if (route === 'hospital') {
       this.currentComponent = 'list-hospitals';
+    }else if( route === 'logout'){
+      this.cookie.delete('access_token');
+      this.router.navigate(['/login']);
     }
   }
 }

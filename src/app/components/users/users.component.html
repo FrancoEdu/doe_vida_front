@@ -7,9 +7,10 @@
     <h2>Email: <span>{{users.username}}</span></h2>
     <h2>Cidade: <span>{{users.city}}</span></h2>
     <h2>Tipo sanguíneo: <span>{{users.blood_type}}</span></h2>
+    <h2>Id: <span>{{users.id}}</span></h2>
   </div>
   <div class="buttons">
-    <button class="button">EDITAR</button>
-    <button class="button">EXCLUIR</button>
+    <button class="button" (click)="navigateToEditForm(users.username)">EDITAR</button>
+    <button class="button" (click)="deleteUser(users.username)">EXCLUIR</button>
   </div>
 </div>

@@ -12,6 +12,7 @@ import { LoginScreenComponent } from './components/login-screen/login-screen.com
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserEditFormComponent } from './components/user-edit-form/user-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UsersComponent } from './components/users/users.component';
     LoginScreenComponent,
     BoardAdminComponent,
     ListUsersComponent,
-    UsersComponent
+    UsersComponent,
+    UserEditFormComponent
   ],
   imports: [
     BrowserModule,

@@ -11,4 +11,5 @@ export interface User{
   date_last_donation: string,
   state: string,
   city: string,
+  id: number,
 }

@@ -5,6 +5,7 @@ import { InitialScreenComponent } from './components/initial-screen/initial-scre
 import { LoginScreenComponent } from './components/login-screen/login-screen.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 import { AuthGuard } from './services/auth.guard';
+import { UserEditFormComponent } from './components/user-edit-form/user-edit-form.component';
 
 const routes: Routes = [
   {
@@ -15,17 +16,13 @@ const routes: Routes = [
     path: 'login',
     component: LoginScreenComponent
   },{
-    path: "listHospitals",
-    canActivate: [AuthGuard],
-    component: ListHospitalsComponent
-  },{
-    path: 'initial',
-    canActivate: [AuthGuard],
-    component: InitialScreenComponent
-  },{
     path: 'board',
     canActivate: [AuthGuard],
     component: BoardAdminComponent
+  },{
+    path: 'board/users/:username',
+    canActivate: [AuthGuard],
+    component: UserEditFormComponent
   }
 ];
 
