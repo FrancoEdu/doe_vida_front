@@ -1,0 +1,20 @@
+<section >
+  <div class="header" *ngIf="UsersList.length > 0">
+    <input type="textarea" placeholder="Busque aqui">
+    <button>Adicionar</button>
+  </div>
+  <div class="users" *ngIf="UsersList.length > 0; else noneUsers">
+    <div *ngFor="let i of UsersList">
+      <app-users [users] ='i'></app-users>
+    </div>
+  </div>
+  <ng-template #noneUsers >
+    <div class="grid-none-users">
+      <img src="../../../assets/Blood donation-rafiki.png" alt="Carregamento">
+      <div class="noneUsers">
+        <h1>Procurando por usuários cadastrados ...</h1>
+      </div>
+      <div class="c-loader"></div>
+    </div>
+  </ng-template>
+</section>
