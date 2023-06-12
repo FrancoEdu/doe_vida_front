@@ -18,6 +18,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+  width: 100%;
   h1{
     font-size: 14px;
     color: var(--global-color);
@@ -27,5 +28,24 @@
     font-size: 12px;
     color: var(--global-color);
     font-weight: 700;
+  }
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+
+  .button{
+    padding: 10px;
+    background-color: var(--global-color);
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 }

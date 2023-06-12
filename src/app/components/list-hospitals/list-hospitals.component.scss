@@ -1,32 +1,53 @@
 section{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 4rem;
-  align-items: center;
-  padding: 0 5rem 0 5rem;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.hospital-image{
-  img{
-    height: 500px;
+.header{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-bottom: 1rem;
+
+  input{
+    padding: 5px;
+    width: 15rem;
+    border-radius: 10px;
+    outline: none;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  button{
+    padding: 10px;
+    background-color: var(--global-color);
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 }
 
 .hospitals{
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 10px;
+  overflow-y: auto;
 }
 
-/* HOSPITAL ERROR STYLES */
 .grid-none-hospital{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  img{
+    height: 350px;
+  }
 }
 .noneHospitals{
   background-color: var(--global-color);
