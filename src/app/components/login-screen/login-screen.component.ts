@@ -40,9 +40,9 @@ export class LoginScreenComponent {
       let result;
       try{
         this.isLoading=true;
-        result = await this.service.login(this.username,this.password)
+        result = await this.service.login(this.username,this.password);
+        console.log(result.access_token)
         this.cookie.set('access_token', result.access_token);
-        console.log(this.cookie.get('access_token'));
         this.router.navigate(['/board'])
       }catch(error){
         if(error instanceof Error && error.message === 'User not found'){

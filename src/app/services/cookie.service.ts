@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { CookieService } from 'ngx-cookie-service';
 
 const expiresDate = new Date();
-expiresDate.setDate(expiresDate.getHours() + 1);
+expiresDate.setDate(expiresDate.getMinutes() + 60);
 
 @Injectable({
   providedIn: 'root'
