@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Hospital } from '../../interface/Hospital';
+import { Hospital } from '../../../interface/Hospital';
 import { States } from 'src/app/enums/states';
 
 @Component({
