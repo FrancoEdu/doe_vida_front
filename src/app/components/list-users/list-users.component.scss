@@ -1,0 +1,73 @@
+section{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-bottom: 1rem;
+
+  input{
+    padding: 5px;
+    width: 15rem;
+    border-radius: 10px;
+    outline: none;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  button{
+    padding: 10px;
+    background-color: var(--global-color);
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+}
+
+.users{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.grid-none-users{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  img{
+    height: 350px;
+  }
+}
+.noneUsers{
+  background-color: var(--global-color);
+  padding: 2rem;
+  border-radius: 15px;
+  color: white;
+  font-family: var(--global-font);
+  font-weight: 400;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.c-loader{
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: var(--global-color);
+  height: 50px;
+  width: 50px;
+}
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}

@@ -11,7 +11,7 @@ export class BoardAdminComponent {
   currentComponent: string = '';
 
   constructor() {
-    this.navigateToRouter('board'); // Carrega automaticamente 'board'
+    this.navigateToRouter('users'); // Carrega automaticamente 'board'
   }
 
   navigateToRouter(route: string) {

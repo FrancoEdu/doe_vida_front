@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HospitalComponent } from './components/hospital/hospital.component';
 import { LoginScreenComponent } from './components/login-screen/login-screen.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
+import { ListUsersComponent } from './components/list-users/list-users.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { BoardAdminComponent } from './components/board-admin/board-admin.compon
     ListHospitalsComponent,
     HospitalComponent,
     LoginScreenComponent,
-    BoardAdminComponent
+    BoardAdminComponent,
+    ListUsersComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
