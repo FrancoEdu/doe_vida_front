@@ -1,0 +1,48 @@
+<section>
+  <form class="form" *ngIf="loading == true; else noneUsers">
+    <header>
+      <h1>
+        Painel de edição
+      </h1>
+      <h5>Id: {{user.id}}</h5>
+    </header>
+    <main>
+      <label>Email: </label>
+      <input type="text" name="email" id="email" [(ngModel)] = 'user.username'>
+      <label>Nome: </label>
+      <input type="text" name="name" id="name" [(ngModel)] = 'user.first_name'>
+      <label>Sobrenome: </label>
+      <input type="text" name="lastName" id="lastName" [(ngModel)] = 'user.last_name'>
+      <label>Tipo Sanguíneo: </label>
+      <input type="text" name="blood_type" [(ngModel)] = 'user.blood_type'>
+      <label>Telefone: </label>
+      <input type="tel" name="phone" id="phone" [(ngModel)] = 'user.phone'>
+      <label>Data de nascimento: </label>
+      <input type="date" name="birth" id="birth" [(ngModel)] = 'user.birthdate'>
+      <label>Cidade: </label>
+      <input type="text" name="city" id="city" [(ngModel)] = 'user.city'>
+      <label>Estado: </label>
+      <input type="text" name="state" id="state" [(ngModel)] = 'user.state'>
+    </main>
+    <footer>
+      <div class="buttons">
+        <button>CANCELAR</button>
+        <button (click)="updateUser()">SALVAR</button>
+      </div>
+      <ng-template #message>
+          <h1 class="message">
+            {{message}}
+          </h1>
+      </ng-template>
+    </footer>
+  </form>
+  <ng-template #noneUsers >
+    <div class="grid-none-users">
+      <img src="../../../assets/Blood donation-rafiki.png" alt="Carregamento">
+      <div class="noneUsers">
+        <h1>Procurando pelo usuário selecionado ...</h1>
+      </div>
+      <div class="c-loader"></div>
+    </div>
+  </ng-template>
+</section>

@@ -47,4 +47,55 @@ export class UserService{
     const data = await response.json()
     return data;
   }
+
+  async getUserByUsername(username: string): Promise<User>{
+    const access_token = this.cookieService.get('access_token');
+    const response = await fetch(`${this.URL}/users/${username}`, {
+      method: 'GET',
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token
+      }
+    })
+    const data = await response.json()
+    return data;
+  }
+
+  async updateUser(user: User, username: string): Promise<any>{
+    const access_token = this.cookieService.get('access_token');
+    const response = await fetch(`${this.URL}/users/${username}`, {
+      method: 'PUT',
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token
+      },
+      body: JSON.stringify(user)
+    })
+
+    if(response.ok){
+      const jsonResponse = await response.json()
+      return jsonResponse
+    }else{
+      throw new Error('Erro ao atualizar o usuário');
+    }
+  }
+
+  async delete(user: User, username: string): Promise<any>{
+    const access_token = this.cookieService.get('access_token');
+    const response = await fetch(`${this.URL}/users/${username}`, {
+      method: 'DELETE',
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token
+      },
+      body: JSON.stringify(user)
+    })
+
+    if(response.ok){
+      const jsonResponse = await response.json()
+      return jsonResponse
+    }else{
+      throw new Error('Erro ao deletar o usuário');
+    }
+  }
 }

@@ -21,4 +21,8 @@ export class cookieService{
   check(name: string){
     return this.cookieService.check(name);
   }
+
+  delete(name: string){
+    this.cookieService.delete(name);
+  }
 }
