@@ -46,8 +46,8 @@ export class AddNewHospitalComponent {
   async saveHospital(): Promise<any>{
     try{
       const response = await this.hospital_service.create(this.hospital.hospital_name, this.hospital.city_name, this.hospital.state);
-      alert("Usuário criado com sucesso");
-      this.router.navigate(['/board/users'])
+      alert("Hospital criado com sucesso");
+      this.router.navigate(['/board/hospitals'])
     }catch(error){
       console.log(error)
     }

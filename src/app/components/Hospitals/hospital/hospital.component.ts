@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Hospital } from '../../../interface/Hospital';
 import { States } from 'src/app/enums/states';
+import { HospitalService } from 'src/app/services/hospital.service';
 
 @Component({
   selector: 'app-hospital',
@@ -18,6 +19,8 @@ export class HospitalComponent implements OnInit{
     state: 0,
   }
 
+  constructor(private hospital_service:HospitalService){}
+
   ngOnInit(): void {
   }
 
@@ -29,5 +32,16 @@ export class HospitalComponent implements OnInit{
       }
     }
     return ""
+  }
+
+  async deleteHospital(hospital_name: string): Promise<any>{
+    try{
+      await this.hospital_service.delete(hospital_name)
+      alert("Hospital Deletado")
+      window.location.reload();
+    }catch(error){
+      alert("Ocorreu um erro ao deletar o hospital")
+      console.log(error)
+    }
   }
 }

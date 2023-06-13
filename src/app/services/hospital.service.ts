@@ -17,18 +17,38 @@ export class HospitalService{
   }
 
   async create(name: string, city: string, state: number): Promise<Hospital>{
-    console.log(name + ', '+city + ', '+ state)
-    const access_token = this.cookie_service.get('access_token')
+    console.log(name)
+    const access_token = this.cookie_service.get('access_token');
+    const data = {
+    hospital_name: name,
+    city_name: city,
+    state: state
+    };
+
     const response = await fetch(`${this.URL}hospitals`, {
-      method: "POST",
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + access_token
       },
-      body: JSON.stringify({name,city,state})
+      body: JSON.stringify(data)
     });
 
-    const data = await response.json()
-    return data
+    const responseData = await response.json();
+    return responseData;
+  }
+
+  async delete(hospital_name:string):Promise<any>{
+    const access_token = this.cookie_service.get('access_token');
+    const response = await fetch(`${this.URL}hospitals/${hospital_name}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token
+      },
+    });
+
+    const responseData = await response.json()
+    return responseData
   }
 }
