@@ -1,8 +1,9 @@
+<app-board-admin></app-board-admin>
+<div class="header" *ngIf="UsersList.length > 0">
+  <input type="textarea" placeholder="Busque aqui">
+  <button (click)="navigateToNewUser()">Adicionar</button>
+</div>
 <section >
-  <div class="header" *ngIf="UsersList.length > 0">
-    <input type="textarea" placeholder="Busque aqui">
-    <button>Adicionar</button>
-  </div>
   <div class="users" *ngIf="UsersList.length > 0; else noneUsers">
     <div *ngFor="let i of UsersList">
       <app-users [users] ='i'></app-users>

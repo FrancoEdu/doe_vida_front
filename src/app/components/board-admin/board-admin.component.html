@@ -1,29 +1,22 @@
 <section class="board-section">
-  <div class="aside-menu">
-    <div class="menu">
-      <a class="link" (click)="navigateToRouter('board')">
-        <img src="../../../assets/icons8-board-24.png" alt="Board">
-        Board
-      </a>
-      <a class="link" (click)="navigateToRouter('users')">
-        <img src="../../../assets/icons8-convidado-masculino-24.png" alt="Accounts">
-        Users
-      </a>
-      <a class="link" (click)="navigateToRouter('hospital')">
-        <img src="../../../assets/icons8-hospital-24.png" alt="Hospitals">
-        Hospitals
-      </a>
-    </div>
-    <div class="logout">
-      <a class="link" (click)="navigateToRouter('logout')">
-        <img src="../../../assets/icons8-x-24.png" alt="logout">
-        Sair
-      </a>
-    </div>
+  <div class="menu">
+    <a class="link" (click)="navigateToBoard()">
+      <img src="../../../assets/icons8-board-24.png" alt="Board">
+      Board
+    </a>
+    <a class="link" (click)="navigateToUsers()">
+      <img src="../../../assets/icons8-convidado-masculino-24.png" alt="Accounts">
+      Users
+    </a>
+    <a class="link" (click)="navigateToHospitals()">
+      <img src="../../../assets/icons8-hospital-24.png" alt="Hospitals">
+      Hospitals
+    </a>
   </div>
-  <div class="view-setting">
-    <app-initial-screen *ngIf="currentComponent === 'initial-screen'"></app-initial-screen>
-    <app-list-hospitals *ngIf="currentComponent === 'list-hospitals'"></app-list-hospitals>
-    <app-list-users *ngIf="currentComponent === 'users'"></app-list-users>
+  <div class="logout">
+    <a class="link" (click)="logout()">
+      <img src="../../../assets/icons8-x-24.png" alt="logout">
+      Sair
+    </a>
   </div>
 </section>

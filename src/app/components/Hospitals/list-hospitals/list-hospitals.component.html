@@ -1,8 +1,9 @@
+<app-board-admin></app-board-admin>
+<div class="header" *ngIf="HospitalList.length > 0">
+  <input type="textarea" placeholder="Busque aqui">
+  <button>Adicionar</button>
+</div>
 <section>
-  <div class="header" *ngIf="HospitalList.length > 0">
-    <input type="textarea" placeholder="Busque aqui">
-    <button>Adicionar</button>
-  </div>
   <div class="hospitals" *ngIf="HospitalList.length > 0; else noneHospitals">
     <div *ngFor="let i of HospitalList">
       <app-hospital [hospital]="i"></app-hospital>

@@ -4,6 +4,10 @@ import { LoginScreenComponent } from './components/login-screen/login-screen.com
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 import { AuthGuard } from './services/auth.guard';
 import { UserEditFormComponent } from './components/User/user-edit-form/user-edit-form.component';
+import { ListHospitalsComponent } from './components/Hospitals/list-hospitals/list-hospitals.component';
+import { ListUsersComponent } from './components/User/list-users/list-users.component';
+import { InitialScreenComponent } from './components/initial-screen/initial-screen.component';
+import { AddNewUserComponent } from './components/User/add-new-user/add-new-user.component';
 
 const routes: Routes = [
   {
@@ -14,9 +18,21 @@ const routes: Routes = [
     path: 'login',
     component: LoginScreenComponent
   },{
-    path: 'board',
+    path: 'board/initial',
     canActivate: [AuthGuard],
-    component: BoardAdminComponent
+    component: InitialScreenComponent
+  },{
+    path: 'board/hospitals',
+    canActivate: [AuthGuard],
+    component: ListHospitalsComponent
+  },{
+    path: 'board/users',
+    canActivate: [AuthGuard],
+    component: ListUsersComponent
+  },{
+    path: 'adduser',
+    canActivate: [AuthGuard],
+    component: AddNewUserComponent
   },{
     path: 'board/users/:username',
     canActivate: [AuthGuard],

@@ -23,6 +23,6 @@ export class cookieService{
   }
 
   delete(name: string){
-    this.cookieService.delete(name);
+    this.cookieService.delete(name)
   }
 }

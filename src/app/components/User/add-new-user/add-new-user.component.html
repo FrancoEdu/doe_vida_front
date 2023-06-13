@@ -1,0 +1,26 @@
+<app-board-admin></app-board-admin>
+<div class="header">
+  <div class="imagem" (click)="navigateToBoardUsers()">
+    <!-- Imagem original -->
+  </div>
+</div>
+<section>
+  <form [formGroup]="formulario">
+    <main>
+      <label>Username: </label>
+      <input type="text" formControlName="email" [(ngModel)]="user.username">
+      <label>Senha: </label>
+      <input type="password" formControlName="senha" [(ngModel)]="user.password">
+      <div *ngIf="formulario.get('senha')?.invalid && formulario.get('senha')?.dirty" class="error">
+        A senha deve ter pelo menos 8 caracteres e conter caracteres especiais.
+      </div>
+    </main>
+    <footer>
+      <div class="buttons">
+        <button>CANCELAR</button>
+        <button (click)="saveUser()" [disabled]="formulario.invalid">SALVAR</button>
+      </div>
+    </footer>
+  </form>
+</section>
+

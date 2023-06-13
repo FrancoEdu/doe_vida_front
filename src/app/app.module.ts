@@ -13,6 +13,7 @@ import { BoardAdminComponent } from './components/board-admin/board-admin.compon
 import { ListUsersComponent } from './components/User/list-users/list-users.component';
 import { UsersComponent } from './components/User/users/users.component';
 import { UserEditFormComponent } from './components/User/user-edit-form/user-edit-form.component';
+import { AddNewUserComponent } from './components/User/add-new-user/add-new-user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserEditFormComponent } from './components/User/user-edit-form/user-edi
     BoardAdminComponent,
     ListUsersComponent,
     UsersComponent,
-    UserEditFormComponent
+    UserEditFormComponent,
+    AddNewUserComponent
   ],
   imports: [
     BrowserModule,

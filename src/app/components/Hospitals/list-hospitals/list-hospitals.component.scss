@@ -2,7 +2,6 @@ section{
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 2rem;
 }
 
@@ -10,7 +9,7 @@ section{
   display: flex;
   flex-direction: row;
   gap: 10px;
-  padding-bottom: 1rem;
+  padding: 1rem;
 
   input{
     padding: 5px;

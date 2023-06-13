@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/interface/Users';
 import { cookieService } from 'src/app/services/cookie.service';
 import { UserService } from 'src/app/services/user.service';
@@ -11,10 +12,14 @@ import { UserService } from 'src/app/services/user.service';
 export class ListUsersComponent {
   UsersList: User[] = []
 
-  constructor(private user_service: UserService){}
+  constructor(private user_service: UserService, private router: Router){}
 
   ngOnInit(){
     this.listUsers();
+  }
+
+  navigateToNewUser(){
+    this.router.navigate(['/adduser'])
   }
 
   async listUsers(): Promise<void>{

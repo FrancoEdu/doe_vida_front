@@ -33,6 +33,19 @@ export class UserService{
       }
     }
   }
+  async create(username: string, password: string): Promise<User>{
+    const access_token = this.cookieService.get('access_token');
+    const response = await fetch(`${this.URL}/users`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token
+      },
+      body: JSON.stringify({username, password})
+    })
+    const data = await response.json();
+    return data
+  }
 
   async getAllUsers(): Promise<User[]>{
     const access_token = this.cookieService.get('access_token');
@@ -98,4 +111,6 @@ export class UserService{
       throw new Error('Erro ao deletar o usuário');
     }
   }
+
+
 }
