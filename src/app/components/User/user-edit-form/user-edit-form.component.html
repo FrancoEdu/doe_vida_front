@@ -1,28 +1,26 @@
 <section>
-  <form class="form" *ngIf="loading == true; else noneUsers">
-    <header>
-      <h1>
-        Painel de edição
-      </h1>
-      <h5>Id: {{user.id}}</h5>
-    </header>
+  <form class="form" *ngIf="loading == true; else noneUsers" [formGroup]="formulario">
     <main>
       <label>Email: </label>
-      <input type="text" name="email" id="email" [(ngModel)] = 'user.username'>
+      <input type="text"  id="email" [(ngModel)] = 'user.username' formControlName="username">
       <label>Nome: </label>
-      <input type="text" name="name" id="name" [(ngModel)] = 'user.first_name'>
+      <input type="text"  id="name" [(ngModel)] = 'user.first_name' formControlName="first_name">
       <label>Sobrenome: </label>
-      <input type="text" name="lastName" id="lastName" [(ngModel)] = 'user.last_name'>
+      <input type="text"  id="lastName" [(ngModel)] = 'user.last_name' formControlName="last_name">
       <label>Tipo Sanguíneo: </label>
-      <input type="text" name="blood_type" [(ngModel)] = 'user.blood_type'>
-      <label>Telefone: </label>
-      <input type="tel" name="phone" id="phone" [(ngModel)] = 'user.phone'>
-      <label>Data de nascimento: </label>
-      <input type="date" name="birth" id="birth" [(ngModel)] = 'user.birthdate'>
-      <label>Cidade: </label>
-      <input type="text" name="city" id="city" [(ngModel)] = 'user.city'>
+      <input type="text"  [(ngModel)] = 'user.blood_type' formControlName="blood_type">
       <label>Estado: </label>
-      <input type="text" name="state" id="state" [(ngModel)] = 'user.state'>
+      <select [(ngModel)] = 'user.state' formControlName="state" (change)="onStateChange()">
+        <option *ngFor="let estado of estados" [value]="estado.sigla">
+          {{estado.sigla}}
+        </option>
+      </select>
+      <label>Cidade: </label>
+      <select [(ngModel)] = 'user.city' formControlName="city">
+        <option *ngFor="let cidade of cidades" [value]="cidade.nome">
+          {{cidade.nome}}
+        </option>
+      </select>
     </main>
     <footer>
       <div class="buttons">
