@@ -74,7 +74,18 @@ export class UserService{
     return data;
   }
 
-  async updateUser(user: User, username: string): Promise<any>{
+  async updateUser(username?: string, first_name?: string,last_name?: string,birthdate?: string,blood_type?: string,city?: string,phone?: string,sex?: boolean,state?: string): Promise<any>{
+      const data = {
+        username: username,
+        first_name: first_name,
+        last_name: last_name,
+        birthdate: birthdate,
+        blood_type: blood_type,
+        city: city,
+        phone: phone,
+        sex: sex,
+        state: state
+      }
     const access_token = this.cookieService.get('access_token');
     const response = await fetch(`${this.URL}/users/${username}`, {
       method: 'PUT',
@@ -82,7 +93,7 @@ export class UserService{
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + access_token
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(data)
     })
 
     if(response.ok){

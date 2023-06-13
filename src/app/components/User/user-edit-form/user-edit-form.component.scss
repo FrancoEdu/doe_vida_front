@@ -108,3 +108,15 @@ section{
     transform: rotate(1turn);
   }
 }
+
+.radio{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+
+  input{
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
