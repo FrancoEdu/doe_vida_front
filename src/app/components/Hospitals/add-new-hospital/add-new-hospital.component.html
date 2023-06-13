@@ -1,0 +1,30 @@
+<app-board-admin></app-board-admin>
+<div class="header">
+  <div class="imagem" (click)="navigateToBoardHospitals()">
+    <!-- Imagem original -->
+  </div>
+</div>
+<section>
+  <form [formGroup]="formulario">
+    <main>
+      <label>Nome do Hospital: </label>
+      <input type="text" formControlName="hospitalname" [(ngModel)]="hospital.hospital_name">
+      <label>Estados: </label>
+      <select [(ngModel)]="hospital.state" formControlName="state" (change)="onStateChange()">
+        <option *ngFor="let estado of estados" [value]="estado.id">
+          {{estado.sigla}}
+        </option>
+      </select>
+      <label>Cidades:</label>
+      <select [(ngModel)]="hospital.city_name" formControlName="cityname">
+        <option *ngFor="let cidade of cidades" [value]="cidade.nome">{{cidade.nome}}</option>
+      </select>
+    </main>
+    <footer>
+      <div class="buttons">
+        <button>CANCELAR</button>
+        <button (click)="saveHospital()" [disabled]="formulario.invalid">SALVAR</button>
+      </div>
+    </footer>
+  </form>
+</section>

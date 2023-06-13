@@ -14,6 +14,7 @@ import { ListUsersComponent } from './components/User/list-users/list-users.comp
 import { UsersComponent } from './components/User/users/users.component';
 import { UserEditFormComponent } from './components/User/user-edit-form/user-edit-form.component';
 import { AddNewUserComponent } from './components/User/add-new-user/add-new-user.component';
+import { AddNewHospitalComponent } from './components/Hospitals/add-new-hospital/add-new-hospital.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddNewUserComponent } from './components/User/add-new-user/add-new-user
     ListUsersComponent,
     UsersComponent,
     UserEditFormComponent,
-    AddNewUserComponent
+    AddNewUserComponent,
+    AddNewHospitalComponent
   ],
   imports: [
     BrowserModule,

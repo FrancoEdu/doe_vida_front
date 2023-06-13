@@ -1,7 +1,7 @@
 <app-board-admin></app-board-admin>
 <div class="header" *ngIf="HospitalList.length > 0">
   <input type="textarea" placeholder="Busque aqui">
-  <button>Adicionar</button>
+  <button (click)="navigateToNewHospital()">Adicionar</button>
 </div>
 <section>
   <div class="hospitals" *ngIf="HospitalList.length > 0; else noneHospitals">

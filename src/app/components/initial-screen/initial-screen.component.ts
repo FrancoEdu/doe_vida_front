@@ -35,9 +35,9 @@ export class InitialScreenComponent {
 
       this.HospitalList.forEach((hospital) => {
         this.totalOfHospitals = this.totalOfHospitals + 1;
-        this.totalOfDonations = this.totalOfDonations + hospital.donations_orders;
-        this.cancelledDonations = this.cancelledDonations + hospital.donations_orders_cancelled;
-        this.doneDonations = this.doneDonations + hospital.donations_orders_done;
+        this.totalOfDonations = this.totalOfDonations + (hospital.donations_orders || 0);
+        this.cancelledDonations = this.cancelledDonations + (hospital.donations_orders_cancelled || 0);
+        this.doneDonations = this.doneDonations + (hospital.donations_orders_done || 0);
       })
     }catch (error){
       console.log(error)

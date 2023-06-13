@@ -8,6 +8,7 @@ import { ListHospitalsComponent } from './components/Hospitals/list-hospitals/li
 import { ListUsersComponent } from './components/User/list-users/list-users.component';
 import { InitialScreenComponent } from './components/initial-screen/initial-screen.component';
 import { AddNewUserComponent } from './components/User/add-new-user/add-new-user.component';
+import { AddNewHospitalComponent } from './components/Hospitals/add-new-hospital/add-new-hospital.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
     path: 'board/hospitals',
     canActivate: [AuthGuard],
     component: ListHospitalsComponent
+  },{
+    path: 'addhospital',
+    canActivate: [AuthGuard],
+    component: AddNewHospitalComponent
   },{
     path: 'board/users',
     canActivate: [AuthGuard],

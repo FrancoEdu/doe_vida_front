@@ -28,17 +28,6 @@ export class AddNewUserComponent {
     });
   }
 
-  senhasIguaisValidator(formGroup: FormGroup) {
-    const senha = formGroup.get('senha')?.value;
-    const confirmacaoSenha = formGroup.get('confirmacaoSenha')?.value;
-
-    if (senha === confirmacaoSenha) {
-      return null; // Senhas são iguais, válidas
-    } else {
-      return { senhasDiferentes: true }; // Senhas são diferentes, inválidas
-    }
-  }
-
   navigateToBoardUsers(){
     this.router.navigate(['/board/users'])
   }

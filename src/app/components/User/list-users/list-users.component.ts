@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interface/Users';
-import { cookieService } from 'src/app/services/cookie.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
